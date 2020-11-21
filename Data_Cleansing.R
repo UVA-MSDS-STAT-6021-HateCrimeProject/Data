@@ -5,7 +5,11 @@ elast_df <- read.csv('elasticity.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 hc_df <- read.csv('hatecrimes.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 police_df <- read.csv('police_killings.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 state_map <- read.csv('mapping.csv', header = TRUE, fileEncoding='UTF-8-BOM')
+gun_df <- read.csv('RAND_gun_ownership.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 
+gun_df <- gun_df[gun_df$Year == 2016,]
+
+gun_df
 
 elast_df[1,] # state = abbrev
 hc_df[1,] # state = full
@@ -14,6 +18,7 @@ police_df[1,] # state = abbrev
 elast_df<-rename(elast_df, state_abbrev=state)
 hc_df<-rename(hc_df, state_full=state)
 police_df<-rename(police_df, state_abbrev=state)
+gun_df<-rename(gun_df, state_full=STATE)
 
 colnames(elast_df) # state = abbrev
 colnames(hc_df) # state = full
@@ -23,6 +28,7 @@ colnames(state_map)
 #elast_df<-left_join(elast_df, state_map, by = 'state_abbrev')
 hc_df<-left_join(hc_df, state_map, by = 'state_full')
 hc_df<-left_join(hc_df, elast_df, by = 'state_abbrev')
+hc_df<-left_join(hc_df, gun_df, by = 'state_full')
 police_df<-left_join(police_df, state_map, by = 'state_abbrev')
 
 elast_df[1,] # state = abbrev
