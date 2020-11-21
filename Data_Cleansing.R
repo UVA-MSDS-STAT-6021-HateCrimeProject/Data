@@ -47,5 +47,11 @@ hc_df<-hc_df[!apply(hc_df['state_full'] == "", 1, all),]
 is.factor(hc_df$confederate)
 hc_df$confederate <- factor(hc_df$confederate, levels = c(0, 1), labels = c('No', 'Yes'))
 
+is.factor(hc_df$universl)
+hc_df$universl <- factor(hc_df$universl, levels = c(0, 1), labels = c('No', 'Yes'))
+
+is.factor(hc_df$permit)
+hc_df$permit <- factor(hc_df$permit, levels = c(0, 1), labels = c('No', 'Yes'))
+
 write.csv(hc_df, 'hate_crimes_full.csv', row.names=F)
 write.csv(police_df, 'police_killings_full.csv', row.names=F)
