@@ -1,52 +1,52 @@
-﻿state_full,state_abbrev,confederate
-Alabama,AL,1
-Alaska,AK,0
-Arizona,AZ,0
-Arkansas,AR,1
-California,CA,0
-Colorado,CO,0
-Connecticut,CT,0
-Delaware,DE,0
-Florida,FL,1
-Georgia,GA,1
-Hawaii,HI,0
-Idaho,ID,0
-Illinois,IL,0
-Indiana,IN,0
-Iowa,IA,0
-Kansas,KS,0
-Kentucky,KY,1
-Louisiana,LA,1
-Maine,ME,0
-Maryland,MD,0
-Massachusetts,MA,0
-Michigan,MI,0
-Minnesota,MN,0
-Mississippi,MS,1
-Missouri,MO,1
-Montana,MT,0
-Nebraska,NE,0
-Nevada,NV,0
-New Hampshire,NH,0
-New Jersey,NJ,0
-New Mexico,NM,0
-New York,NY,0
-North Carolina,NC,1
-North Dakota,ND,0
-Ohio,OH,0
-Oklahoma,OK,0
-Oregon,OR,0
-Pennsylvania,PA,0
-Rhode Island,RI,0
-South Carolina,SC,1
-South Dakota,SD,0
-Tennessee,TN,1
-Texas,TX,1
-Utah,UT,0
-Vermont,VT,0
-Virginia,VA,1
-Washington,WA,0
-District of Columbia,DC,0
-West Virginia,WV,0
-Wisconsin,WI,0
-Wyoming,WY,0
+﻿state_full,state_abbrev,confederate,population
+Alabama,AL,1,4858979
+Alaska,AK,0,738432
+Arizona,AZ,0,6828065
+Arkansas,AR,1,2978204
+California,CA,0,39144818
+Colorado,CO,0,5456574
+Connecticut,CT,0,3590886
+Delaware,DE,0,945934
+Florida,FL,1,20271272
+Georgia,GA,1,10214860
+Hawaii,HI,0,1431603
+Idaho,ID,0,1654930
+Illinois,IL,0,12859995
+Indiana,IN,0,6619680
+Iowa,IA,0,3123899
+Kansas,KS,0,2911641
+Kentucky,KY,1,4425092
+Louisiana,LA,1,4670724
+Maine,ME,0,1329328
+Maryland,MD,0,6006401
+Massachusetts,MA,0,6794422
+Michigan,MI,0,9922576
+Minnesota,MN,0,5489594
+Mississippi,MS,1,2992333
+Missouri,MO,1,6083672
+Montana,MT,0,1032949
+Nebraska,NE,0,1896190
+Nevada,NV,0,2890845
+New Hampshire,NH,0,1330608
+New Jersey,NJ,0,8958013
+New Mexico,NM,0,2085109
+New York,NY,0,19795791
+North Carolina,NC,1,10042802
+North Dakota,ND,0,756927
+Ohio,OH,0,11613423
+Oklahoma,OK,0,3911338
+Oregon,OR,0,4028977
+Pennsylvania,PA,0,12802503
+Rhode Island,RI,0,1056298
+South Carolina,SC,1,4896146
+South Dakota,SD,0,858469
+Tennessee,TN,1,6600299
+Texas,TX,1,27469114
+Utah,UT,0,2995919
+Vermont,VT,0,626042
+Virginia,VA,1,8382993
+Washington,WA,0,7170351
+District of Columbia,DC,0,672228
+West Virginia,WV,0,1844128
+Wisconsin,WI,0,5771337
+Wyoming,WY,0,586107
