@@ -20,7 +20,7 @@ elast_df<-rename(elast_df, state_abbrev=state)
 hc_df<-rename(hc_df, state_full=state)
 police_df<-rename(police_df, state_abbrev=state)
 gun_df<-rename(gun_df, state_full=STATE)
-hate_group_df<-rename(hate_group_df, state_abbrev=State)
+hate_group_df<-rename(hate_group_df, state_full=State)
 
 colnames(elast_df) # state = abbrev
 colnames(hc_df) # state = full
@@ -33,7 +33,7 @@ hc_df<-left_join(hc_df, state_map, by = 'state_full')
 hc_df<-left_join(hc_df, elast_df, by = 'state_abbrev')
 hc_df<-left_join(hc_df, gun_df, by = 'state_full')
 police_df<-left_join(police_df, state_map, by = 'state_abbrev')
-hc_df<-left_join(hc_df, hate_group_df, by = 'state_abbrev')
+hc_df<-left_join(hc_df, hate_group_df, by = 'state_full')
 
 elast_df[1,] # state = abbrev
 hc_df[1,] # state = full
