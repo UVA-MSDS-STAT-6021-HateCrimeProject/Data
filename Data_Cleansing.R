@@ -7,6 +7,7 @@ hc_df <- read.csv('hatecrimes.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 police_df <- read.csv('police_killings.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 state_map <- read.csv('mapping.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 gun_df <- read.csv('RAND_gun_ownership.csv', header = TRUE, fileEncoding='UTF-8-BOM')
+fbi_2019 <- read.csv('2019_fbi.csv', header = TRUE, fileEncoding='UTF-8-BOM')
 
 pol_count <- police_df %>% count(state)
 
@@ -38,6 +39,7 @@ hc_df<-left_join(hc_df, state_map, by = 'state_full')
 hc_df<-left_join(hc_df, elast_df, by = 'state_abbrev')
 hc_df<-left_join(hc_df, gun_df, by = 'state_full')
 hc_df<-left_join(hc_df, pol_count, by = 'state_abbrev')
+hc_df<-left_join(hc_df, fbi_2019, by = 'state_full')
 
 police_df<-left_join(police_df, state_map, by = 'state_abbrev')
 
@@ -66,7 +68,12 @@ is.factor(hc_df$permit)
 hc_df$permit <- factor(hc_df$permit, levels = c(0, 1), labels = c('No', 'Yes'))
 
 hc_df$pk_count[is.na(hc_df$pk_count)] <- 0
-hc_df$pk_percap <- hc_df$pk_count/hc_df$population
+hc_df$pk_percap <- hc_df$pk_count / hc_df$population
+
+#hc_df$incidents <- as.numeric(hc_df$incidents)
+#hc_df$pop_covered <- as.numeric(hc_df$pop_covered)
+
+hc_df$fbi_2019_per100k <- hc_df$incidents/hc_df$pop_covered*100000
 
 write.csv(hc_df, 'hate_crimes_full.csv', row.names=F)
 write.csv(police_df, 'police_killings_full.csv', row.names=F)
