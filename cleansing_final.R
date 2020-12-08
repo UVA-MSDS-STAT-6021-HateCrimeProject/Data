@@ -1,37 +1,3 @@
-Skip to content
-Search or jump to.
-
-Pull requests
-Issues
-Marketplace
-Explore
-
-@dfuent 
-UVA-MSDS-STAT-6021-HateCrimeProject
-/
-  Data
-1
-0
-0
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Data/Data_Cleansing_2.R
-@dfuent
-dfuent Add files via upload
-Latest commit 8a4f035 4 days ago
-History
-1 contributor
-106 lines (72 sloc)  3.7 KB
-
-#library(plyr) # to rename columns
-#library(tidyverse)
 library(dplyr)
 
 elast_df <- read.csv('elasticity.csv', header = TRUE, fileEncoding='UTF-8-BOM')
@@ -66,7 +32,6 @@ colnames(police_df) # state = abbrev
 colnames(state_map)
 colnames(pol_count)
 
-#elast_df<-left_join(elast_df, state_map, by = 'state_abbrev')
 hc_df<-left_join(hc_df, state_map, by = 'state_full')
 hc_df<-left_join(hc_df, elast_df, by = 'state_abbrev')
 hc_df<-left_join(hc_df, gun_df, by = 'state_full')
@@ -109,6 +74,7 @@ hc_df$fbi_2019_per100k <- hc_df$incidents/hc_df$pop_covered*100000
 
 hc_full_df<-hc_df
 
+# add hate group count data. Matt, maybe put the CSV read in at the top with the rest and kind of standardize everything?
 
 # Add in the 2016 Data
 hate_group_2016_df <- read.csv('hate_group_count_2016.csv', header = TRUE, fileEncoding='UTF-8-BOM')
@@ -139,21 +105,8 @@ hc_full_df<- transform(hc_full_df, con_uni_combo=ifelse(universl == 'No' & confe
                        'Both'))))
 
 
-#$con_uni_combo<- if (hc_full_df$universl == 'No' & hc_full_df$confederate == 'No') {
-#  hc_full_df$con_uni_combo = 'Neither'
-#} else if (hc_full_df$universl == 'No' & hc_full_df$confederate == 'Yes'){
-#  hc_full_df$con_uni_combo = 'Confederate Only'
-#} else if (hc_full_df$universl == 'Yes' & hc_full_df$confederate == 'No'){
-#  hc_full_df$con_uni_combo = 'Background Check Only'
-#} else {
-#  hc_full_df$con_uni_combo = 'Both'
-#}
-
 write.csv(hc_full_df, 'hate_crimes_full_vfin.csv', row.names=F)
 
+# we don't use the DF below. Maybe we should remove?
 
-
-
-
-#write.csv(hc_df, 'hate_crimes_full.csv', row.names=F)
 write.csv(police_df, 'police_killings_full.csv', row.names=F)
